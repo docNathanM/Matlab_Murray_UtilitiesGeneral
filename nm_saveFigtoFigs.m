@@ -18,12 +18,14 @@ defaultFigFolder = 'figs';
 defaultDoFIG = false;
 defaultDoPNG = true;
 defaultDoPDF = false;
+defaultPNGmagnification = '-m4';
 validInputFigH = @(x) strcmp(class(x),'matlab.ui.Figure');
 validInputFigName = @(x) ischar(x);
     
 addRequired(p,'fHin',validInputFigH);
 addRequired(p,'fNameIN',validInputFigName);
 addParameter(p,'doPNG',defaultDoPNG,@(x) islogical(x));
+addParameter(p,'pngMagnification',defaultDoPNG,@(x) ismember(x,{'-m1' '-m2' '-m3' '-m4'}));
 addParameter(p,'doPDF',defaultDoPDF,@(x) islogical(x));
 addParameter(p,'doFIG',defaultDoFIG,@(x) islogical(x));
 addParameter(p,'outFigFolder',defaultFigFolder,@(x) ischar(x));
@@ -36,6 +38,7 @@ outFigFolder = p.Results.outFigFolder;
 doPNG = p.Results.doPNG;
 doPDF = p.Results.doPDF;
 doFIG = p.Results.doFIG;
+pngMag = p.Results.pngMagnification;
 
 %%
 
@@ -56,7 +59,7 @@ doFIG = p.Results.doFIG;
     
     if ( doPNG )
         % creates a PNG
-        export_fig(fH,fullfile(outFigFolder,[expN '.png']),'-m4','-p0.01');
+        export_fig(fH,fullfile(outFigFolder,[expN '.png']),pngMag,'-p0.01');
         % The -m4 increases the resolution by 4 times and the -p0.01 option
         % puts a small border around the plot region.  
     end
