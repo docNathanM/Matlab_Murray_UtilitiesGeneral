@@ -25,7 +25,7 @@ validInputFigName = @(x) ischar(x);
 addRequired(p,'fHin',validInputFigH);
 addRequired(p,'fNameIN',validInputFigName);
 addParameter(p,'doPNG',defaultDoPNG,@(x) islogical(x));
-addParameter(p,'pngMagnification',defaultDoPNG,@(x) ismember(x,{'-m1' '-m2' '-m3' '-m4'}));
+addParameter(p,'pngMagnification',defaultPNGmagnification,@(x) ismember(x,{'-m1' '-m2' '-m3' '-m4'}));
 addParameter(p,'doPDF',defaultDoPDF,@(x) islogical(x));
 addParameter(p,'doFIG',defaultDoFIG,@(x) islogical(x));
 addParameter(p,'outFigFolder',defaultFigFolder,@(x) ischar(x));
