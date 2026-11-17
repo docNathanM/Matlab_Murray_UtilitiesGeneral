@@ -1,6 +1,7 @@
 function nm_saveFigtoFigs( fHin, fNameIN, varargin )
 %nm_saveFig() can save the .fig file and create .pdf and .png
 % Depends on ~/altmany-export_fig/export_fig.m
+% https://www.mathworks.com/matlabcentral/fileexchange/23629-export_fig
 %
 % REQUIRED:    fHin => Figure handle for figure to save.
 %           fNameIN => Figure name without extension.
